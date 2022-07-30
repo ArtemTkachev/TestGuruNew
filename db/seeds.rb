@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 ruby_category = Category.create(title: 'Ruby')
 go_category = Category.create(title: 'Go')
 js_category = Category.create(title: 'JS')
@@ -26,14 +27,17 @@ question_4 = Question.create(body: "List the Go language data types", test_id: p
 question_5 = Question.create(body: "I don't know JS data types", test_id: practic_js_test.id)
 
 
-answer_1 = Answer.create(body: "I don't know Go", correct: false, question_id: question_1.id)
-answer_2 = Answer.create(body: "I don't know Ruby", correct: false, question_id: question_2.id)
-answer_3 = Answer.create(body: "I don't know JS", correct: false, question_id: question_3.id)
-answer_4 = Answer.create(body: "I don't know Go data types", correct: false, question_id: question_4.id)
-answer_5 = Answer.create(body: "I don't know JS data types", correct: false, question_id: question_5.id)
+answer_1 = Answer.create(body: "I don't know Go", correct: true, question_id: question_1.id)
+answer_2 = Answer.create(body: "I don't know Ruby", correct: true, question_id: question_1.id)
+answer_3 = Answer.create(body: "I don't know JS", correct: false, question_id: question_1.id)
+answer_4 = Answer.create(body: "I don't know Go data types", correct: false, question_id: question_1.id)
+answer_5 = Answer.create(body: "I don't know JS data types", correct: false, question_id: question_2.id)
 
 TestPassage.create([{ user_id: artur_user.id, test_id: gen_ruby_test.id, current_question_id: question_1.id },
                   { user_id: artur_user.id, test_id: gen_go_test.id, current_question_id: question_2.id },
                   { user_id: artur_user.id, test_id: gen_js_test.id, current_question_id: question_3.id },
                   { user_id: john_user.id, test_id: practic_go_test.id, current_question_id: question_4.id},
                   { user_id: john_user.id, test_id: practic_js_test.id, current_question_id: question_5.id }])
+
+
+
